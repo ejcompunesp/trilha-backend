@@ -1,4 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
+const CategoriesEnum = require('../config/categories');
 
 class Product extends Model {
   static init(connection) {
@@ -6,7 +7,10 @@ class Product extends Model {
       name: DataTypes.STRING,
       price: DataTypes.FLOAT,
       description: DataTypes.TEXT,
-      image: DataTypes.STRING,
+      image_uri: DataTypes.STRING,
+      discount: DataTypes.FLOAT,
+      category: DataTypes.ENUM(Object.values(CategoriesEnum)),
+      created_at: DataTypes.DATE
     }, {
       sequelize: connection
     });

@@ -14,4 +14,7 @@ User.init(connection);
 Brand.init(connection);
 Product.init(connection);
 
+Brand.associate(connection.models);
+Product.associate(connection.models);
+
 module.exports = connection;

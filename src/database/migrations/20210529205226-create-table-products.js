@@ -1,5 +1,7 @@
 'use strict';
 
+const CategoriesEnum = require("../../config/categories");
+
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('products', {
@@ -27,9 +29,23 @@ module.exports = {
         type: Sequelize.FLOAT,
         allowNull: false,
       },
-      image: {
+      image_uri: {
         type: Sequelize.STRING,
         allowNull: true,
+      },
+      discount: {
+        type: Sequelize.FLOAT,
+        allowNull: false,
+        defaulValue: 0
+      },
+      category: {
+        type: Sequelize.ENUM(Object.values(CategoriesEnum)),
+        allowNull: false
+      },
+      created_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+        defaulValue: new Date()
       }
     });
   },
