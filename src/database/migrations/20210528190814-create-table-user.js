@@ -13,10 +13,6 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      last_name: {
-        type: Sequelize.STRING,
-        allowNull: true,
-      },
       email: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -26,20 +22,12 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      city: {
-        type: Sequelize.STRING,
+      cpf: {
+        type: Sequelize.STRING(14),
         allowNull: true,
       },
-      district: {
-        type: Sequelize.STRING,
-        allowNull: true,
-      },
-      street: {
-        type: Sequelize.STRING,
-        allowNull: true,
-      },
-      number: {
-        type: Sequelize.INTEGER,
+      zip_code: {
+        type: Sequelize.STRING(9),
         allowNull: true,
       },
       is_admin: {

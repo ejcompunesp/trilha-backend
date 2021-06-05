@@ -1,6 +1,6 @@
 'use strict';
 
-const CategoriesEnum = require("../../config/categories");
+const { CategoriesEnum } = require("../../config/categories");
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -32,11 +32,6 @@ module.exports = {
       image_uri: {
         type: Sequelize.STRING,
         allowNull: true,
-      },
-      discount: {
-        type: Sequelize.FLOAT,
-        allowNull: false,
-        defaulValue: 0
       },
       category: {
         type: Sequelize.ENUM(Object.values(CategoriesEnum)),

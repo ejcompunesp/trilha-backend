@@ -4,4 +4,11 @@ const CategoriesEnum = Object.freeze({
   HEADSET: 'headset',
 });
 
-module.exports = CategoriesEnum;
+module.exports = {
+  CategoriesEnum,
+  isCategory: (category) => {
+    if (Object.values(CategoriesEnum).includes(category))
+      return true;
+    return false;
+  }
+};
