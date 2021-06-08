@@ -8,7 +8,6 @@ class Product extends Model {
       price: DataTypes.FLOAT,
       description: DataTypes.TEXT,
       image_uri: DataTypes.STRING,
-      discount: DataTypes.FLOAT,
       category: DataTypes.ENUM(Object.values(CategoriesEnum)),
       created_at: DataTypes.DATE
     }, {

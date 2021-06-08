@@ -21,6 +21,9 @@ routes.post('/brand', auth, BrandController.save);
 routes.put('/brand/:id', auth, BrandController.update);
 routes.delete('/brand/:id', auth, BrandController.delete);
 
+routes.get('/product', ProductController.query);
 routes.post('/product', auth, multer(multerConfig).single('image'), ProductController.save);
+routes.put('/product/:id', auth, multer(multerConfig).single('image'), ProductController.update);
+routes.delete('/product/:id', auth, ProductController.delete);
 
 module.exports = routes;
