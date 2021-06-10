@@ -25,6 +25,7 @@ module.exports = {
       cpf: {
         type: Sequelize.STRING(14),
         allowNull: true,
+        unique: true,
       },
       zip_code: {
         type: Sequelize.STRING(9),
