@@ -1,2 +1,2 @@
-worker: yarn deploy
+worker: yarn reset
 web: yarn start
